@@ -15,6 +15,7 @@
 </head>
 
 <body class="bg-primary">
+
 	<div class="div-body">
 
 		<div class="div-header">
@@ -25,21 +26,30 @@
 				<p>Sistema Gerenciador de Biblioteca</p>
 			</div>
 			<div class="div-title-h3">
-				<h3>Te Abicora</h3>
+				<h3>Já Queres Acessar?</h3>
 			</div>
 
 		</div>
 		<div class="div-main">
 			<div class="div-main-column">
-				
-				<div class="div-log-cad-pass">
-					<h3 style="text-align: center;"><a href="login.html">Login</a></h3>
-				</div>
-				<div class="div-log-cad-pass">
-					<h3 style="text-align: center;"><a href="create-user.html">Cadastro</a></h3>
-				</div>
-				<div class="div-log-cad-pass" style="margin-bottom: 5%">
-					<h3 style="text-align: center;">Recuperar Senha</h3>
+				<div class="div-form">
+					<form action"">
+						<div class="mb-3">
+							<label for="email" class="form-label">E-mail</label>
+							<input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+							<div id="emailHelp" class="form-text">Seu e-mail cadastrado.</div>
+						</div>
+						<div class="mb-3">
+							<label for="password" class="form-label">Senha</label>
+							<input type="password" class="form-control" id="password">
+						</div>
+						<div class="div-form-flex">
+						<a class="div-links-flex-left" href="create-user.html">Já Esqueci Minha Senha</a>
+						<a class="div-links-flex-right" href="create-user.html">Já Quero Me Cadastrar</a>
+						</div>
+						<br><br>
+						<button type="submit" class="btn btn-primary" onclick="login()">Entrar</button>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -49,6 +59,32 @@
 		</div>
 
 	</div>
+
+
+	<script type="text/javascript">
+
+		function login() {
+			var email = $("#email").val();
+			var password = $("#password").val();
+			$.ajax({
+				method: "POST",
+				url: "http://localhost:8080/library/users/login",
+				data: JSON.stringify({email: email, password: password}),
+				contentType: "application/json; charset=utf-8",
+				success: function (response) {
+					window.location.replace("home.html");
+				}
+			}).fail(function (xhr, status, errorThrown) {
+				alert("Erro ao fazer login: " + xhr.responseText);
+				window.location.replace("login.html");
+			});
+		}
+	</script>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
 </body>
 
 </html>
