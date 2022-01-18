@@ -79,7 +79,7 @@
 						<button type="button" class="btn btn-warning" onclick="resetTable()">Limpar Tabela</button>
 					</table>
 
-					<a href="delete.html"><button type="button" class="btn btn-danger" onclick="del()">Deletar</button></a>
+					<button type="button" class="btn btn-danger" onclick="del()">Deletar</button>
 					</form>
 					</div>
 				</div>
@@ -136,6 +136,7 @@
 
 					success: function (response) {
 						alert("TU DELETASTES UMA PARADA AÍ!")
+						window.location.replace("delete.html");
 					}
 				}).fail(function (xhr, status, errorThrown) {
 					alert("Erro ao deletar: " + xhr.responseText);

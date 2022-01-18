@@ -16,6 +16,10 @@
 
 
 <body class="bg-primary">
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 	<div class="div-body">
 
 		<div class="div-header">
@@ -39,7 +43,7 @@
 					<h2><a href="delete.html">Deletar</a></h2>
 				</div>
 				<div class="div-menu">
-					<h2><a onClick="logoff()" href="index.html">Sair</a></h2>
+					<h2><a onClick="logoff()" href="#">Sair</a></h2>
 				</div>
 			</div>
 
@@ -60,6 +64,8 @@
 
 	</div>
 
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 	<script type="text/javascript">
 
@@ -93,7 +99,7 @@
 				success: function (response) {
 					alert("Já pegastes o beco!")
 					window.location.replace("index.html");
-					
+
 				}
 			}).fail(function (xhr, status, errorThrown) {
 				alert("Erro ao sair: " + xhr.responseText);

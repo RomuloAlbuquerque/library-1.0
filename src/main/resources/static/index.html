@@ -33,7 +33,7 @@
 		<div class="div-main">
 			<div class="div-main-column">
 				<div class="div-form-login div-form">
-					<form action"home.html">
+					<form action"home.html" method="dialog">
 						<div class="mb-3">
 							<label for="email" class="form-label">E-mail</label>
 							<input type="email" class="form-control" id="email" aria-describedby="emailHelp">
@@ -44,7 +44,7 @@
 							<input type="password" class="form-control" id="password">
 						</div>
 						<div class="div-form-flex">
-							<a class="div-links-flex-left" href="create-user.html">Já Esqueci Minha Senha</a>
+							<a class="div-links-flex-left" href="recovery-user.html">Já Esqueci Minha Senha</a>
 							<a class="div-links-flex-right" href="create-user.html">Já Quero Me Cadastrar</a>
 						</div>
 						<br><br>
@@ -73,12 +73,14 @@
 				contentType: "application/json; charset=utf-8",
 				success: function (response) {
 					window.location.replace("home.html");
+					alert("Seja Bem Vindo");
 				}
 			}).fail(function (xhr, status, errorThrown) {
-				alert("Erro ao fazer login: " + xhr.responseText);
 				window.location.replace("index.html");
+				alert("Erro ao fazer login: " + xhr.responseText);
 			});
 		}
+		
 	</script>
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"

@@ -26,7 +26,7 @@
 				<p>Sistema Gerenciador de Biblioteca</p>
 			</div>
 			<div class="div-title-h3">
-				<h3>Faz Teu Cadastro</h3>
+				<h3>Bora Ver Se Recupera!</h3>
 			</div>
 
 		</div>
@@ -37,7 +37,7 @@
 					<form action="" id="form-create">
 
 						<div>
-							<h6 class="insira-dados">Coloca Teus Dados</h6>
+							<h6 class="insira-dados">Coloca Teus Dados Certinhos Que a Gente Vai Comparar</h6>
 						</div>
 						<div>
 							<div class="form-group">
@@ -53,19 +53,19 @@
 						</div>
 						<div>
 							<div class="form-group">
-								<label for="password">Tua senha:</label><br>
+								<label for="password">Tua nova senha:</label><br>
 								<input type="password" name="password" id="password" class="form-control">
 							</div>
 						</div>
 						<div>
 							<div class="form-group">
-								<label for="password">Repete a tua senha:</label><br>
+								<label for="password">Repete a tua nova senha:</label><br>
 								<input type="password" name="password" id="password" class="form-control">
 							</div>
 						</div>
 						<br>
 
-						<button type="button" class="btn btn-primary" onclick="create(); this.form.reset()">Salvar</button>
+						<button type="button" class="btn btn-primary" onclick="recovery(); this.form.reset()">Atualizar</button>
 						<!--button type="button" class="btn btn-success" onclick="this.form.reset()">Novo</button-->
 
 					</form>
@@ -100,22 +100,22 @@
 
 	<script type="text/javascript">
 
-		function create() {
+		function recovery() {
 			var name = $("#name").val();
 			var email = $("#email").val();
 			var password = $("#password").val();
 
 			$.ajax({
 				method: "POST",
-				url: "http://localhost:8080/library/users/create-client",
+				url: "http://localhost:8080/library/users/recovery-user",
 				data: JSON.stringify({name: name, email: email, password: password}),
 				contentType: "application/json; charset=utf-8",
 				success: function (response) {
-					alert("BELEZA! AGORA TU TENS CADASTRO!");
+					alert("TA BELEZA! SALVAMOS A NOVA SENHA!");
 					window.location.replace("index.html");
 				}
 			}).fail(function (xhr, status, errorThrown) {
-				alert("Eita! Deu ruim na hora de salvar: " + xhr.responseText);
+				alert("ESSA NÃO! VOCE NÃO INFORMOU TUDO CERTINHO" + xhr.responseText);
 			});
 		}
 	</script>
