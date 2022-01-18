@@ -92,6 +92,8 @@
 				url: "http://localhost:8080/library/users/logoff",
 				success: function (response) {
 					alert("Já pegastes o beco!")
+					window.location.replace("index.html");
+					
 				}
 			}).fail(function (xhr, status, errorThrown) {
 				alert("Erro ao sair: " + xhr.responseText);

@@ -32,8 +32,8 @@
 		</div>
 		<div class="div-main">
 			<div class="div-main-column">
-				<div class="div-form">
-					<form action"">
+				<div class="div-form-login div-form">
+					<form action"home.html">
 						<div class="mb-3">
 							<label for="email" class="form-label">E-mail</label>
 							<input type="email" class="form-control" id="email" aria-describedby="emailHelp">
@@ -44,8 +44,8 @@
 							<input type="password" class="form-control" id="password">
 						</div>
 						<div class="div-form-flex">
-						<a class="div-links-flex-left" href="create-user.html">Já Esqueci Minha Senha</a>
-						<a class="div-links-flex-right" href="create-user.html">Já Quero Me Cadastrar</a>
+							<a class="div-links-flex-left" href="create-user.html">Já Esqueci Minha Senha</a>
+							<a class="div-links-flex-right" href="create-user.html">Já Quero Me Cadastrar</a>
 						</div>
 						<br><br>
 						<button type="submit" class="btn btn-primary" onclick="login()">Entrar</button>
@@ -76,11 +76,11 @@
 				}
 			}).fail(function (xhr, status, errorThrown) {
 				alert("Erro ao fazer login: " + xhr.responseText);
-				window.location.replace("login.html");
+				window.location.replace("index.html");
 			});
 		}
 	</script>
-	
+
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
