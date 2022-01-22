@@ -1,7 +1,7 @@
 # library-1.0
 Library management system. Developed with Java language and Spring framework.
 
-Contexto da aplicação: localhost:8080/library
+# Contexto da aplicação: localhost:8080/library
 
 login admin.
 E-mail: admin@techlead.com
